@@ -2,26 +2,28 @@ package aula29082019;
 
 public class TreeMenu extends BinarySearchTree {
 
-	public void add(int key) {
+	public void add(Node node) {
 		if (_root == null) {
-			_root = new Node(key);
+			_root = node;
 		} else {
-			add(_root, key);
+			add(_root, node);
 		}
 	}
 	
-	public void add(Node node, int key) {
-		if(key < node.key) {
+	public void add(Node node, Node newNode) {
+		if(newNode.key < node.key) {
 			if (node.hasLeftChild()) {
-				add(node.leftChild, key);
+				add(node.leftChild, newNode);
 			} else {
-				node.leftChild = new Node(key, node);
+				node.leftChild = newNode;
+				node.leftChild.parent = node;
 			}
 		} else {
 			if (node.hasRightChild()) {
-				add(node.rightChild, key);
+				add(node.rightChild, newNode);
 			} else {
-				node.rightChild = new Node(key, node);
+				node.rightChild = newNode;
+				node.rightChild.parent = node;
 			}
 		}
 	}
