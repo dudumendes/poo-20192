@@ -33,7 +33,7 @@ public class BinarySearchTree {
 	
 	public void preOrder(Node node) {
 		if (node != null) {
-			System.out.println(node.key);
+			System.out.println(node);
 			preOrder(node.leftChild);
 			preOrder(node.rightChild);
 		}
@@ -50,7 +50,7 @@ public class BinarySearchTree {
 			for (int i = 0; i < node.depth(); i++) {
 				buffer += "- ";
 			}
-			System.out.println(buffer + node.key);
+			System.out.println(buffer + node);
 			
 			printIndentedKey(node.leftChild);
 			printIndentedKey(node.rightChild);

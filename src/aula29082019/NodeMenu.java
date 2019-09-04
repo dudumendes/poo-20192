@@ -12,4 +12,8 @@ public class NodeMenu extends Node {
 		super(key, parent);
 		this.title = title;
 	}
+	
+	public String toString() {
+		return "" + key + ": " + title;
+	}
 }
