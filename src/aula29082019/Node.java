@@ -1,8 +1,8 @@
 package aula29082019;
 
 public class Node {
-	int key;
-	Node parent;
+	private int key;
+	protected Node parent;
 	Node leftChild;
 	Node rightChild;
 	
@@ -13,6 +13,10 @@ public class Node {
 	public Node(int key, Node parent) {
 		this(key);
 		this.parent = parent;
+	}
+	
+	public int getKey() {
+		return this.key;
 	}
 	
 	public boolean isRoot() {

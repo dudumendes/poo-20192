@@ -3,15 +3,15 @@ package aula29082019;
 public class TreeMenu extends BinarySearchTree {
 
 	public void add(Node node) {
-		if (_root == null) {
-			_root = node;
+		if (isRootNull()) {
+			setRoot(node);
 		} else {
-			add(_root, node);
+			add(getRoot(), node);
 		}
 	}
 	
 	public void add(Node node, Node newNode) {
-		if(newNode.key < node.key) {
+		if(newNode.getKey() < node.getKey()) {
 			if (node.hasLeftChild()) {
 				add(node.leftChild, newNode);
 			} else {

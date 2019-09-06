@@ -1,18 +1,31 @@
 package aula29082019;
 
 public class BinarySearchTree {
-	Node _root;
+	private Node root;
+	
+	public Node getRoot() {
+		return this.root;
+	}
+	
+	public void setRoot(Node root) {
+		if (root.getKey() >= 0)
+			this.root = root;
+	}
+	
+	public boolean isRootNull() {
+		return this.root == null;
+	}
 	
 	public void add(int key) {
-		if (_root == null) {
-			_root = new Node(key);
+		if (root == null) {
+			root = new Node(key);
 		} else {
-			add(_root, key);
+			add(root, key);
 		}
 	}
 	
 	public void add(Node node, int key) {
-		if(key < node.key) {
+		if(key < node.getKey()) {
 			if (node.hasLeftChild()) {
 				add(node.leftChild, key);
 			} else {
@@ -28,7 +41,7 @@ public class BinarySearchTree {
 	}
 	
 	public void preOrder() {
-		preOrder(_root);
+		preOrder(root);
 	}
 	
 	public void preOrder(Node node) {
@@ -40,7 +53,7 @@ public class BinarySearchTree {
 	}
 	
 	public void printIndentedKey() {
-		printIndentedKey(_root);
+		printIndentedKey(root);
 	}
 
 	public void printIndentedKey(Node node) {

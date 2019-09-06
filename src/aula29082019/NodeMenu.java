@@ -14,6 +14,6 @@ public class NodeMenu extends Node {
 	}
 	
 	public String toString() {
-		return "" + key + ": " + title;
+		return "" + getKey() + ": " + title;
 	}
 }
