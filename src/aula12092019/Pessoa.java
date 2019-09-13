@@ -21,7 +21,7 @@ public class Pessoa {
 		return sobrenome;
 	}
 	
-	public void setSobrenome() {
+	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
 	}
 }
