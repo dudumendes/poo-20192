@@ -18,6 +18,7 @@ public abstract class Pagina {
 	
 	public abstract void corpo();
 
+	//Este eh o metodo gabarito (template-method)
 	public final void exibir() {
 		topo();
 		menu();
